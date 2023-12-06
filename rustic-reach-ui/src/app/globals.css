@@ -1,27 +1,243 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light gray background */
+}
+
+header {
+  background-color: #d1e7ff;
+  color: #dd0101;
+  font-weight: 700;
+  font-size: x-large;
+  padding: 20px 50px;
+  display: block;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* header input[type="search"] {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  width: 200px;
+  margin-right: 10px;
+} */
+
+button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+}
+
+.file-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.file-list th,
+.file-list td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+
+.three-column-layout {
+  display: flex;
+  max-width: 95%;
+  margin: 0 ;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.column {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* background-color: #f8f8f8; */
+}
+
+
+.column2 {
+  flex: 0 0 30%;
+  margin-right: 20px; /* Adjust spacing between columns if needed */
+}
+
+.column3 {
+  flex: 1 ;
+  width: 100%;
+ 
+}
+
+.flex {
+  display: flex;
+  align-items: justify;
+
+   /* Align children vertically centered */
+}
+
+/* Added spacing between File Manager and button */
+.flex > div:not(:last-child) {
+  margin-right: 45%;
+}
+
+/* Added spacing between content in each column */
+.column > * {
+  margin-bottom: 10px;
+}
+
+
+.workspace {
+  background-color: rgba(189, 234, 254, 0.479);
+  color: #020000;
+  padding: 10px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding-top: 5px;
+}
+.tree-node {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.tree-node span {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.actions {
+  margin-left: auto;
+}
+
+.tree-node.collapsed::before {
+  content: '►'; /* Right-pointing triangle character */
+  margin-right: 5px;
+}
+
+.tree-node.expanded::before {
+  content: '▼'; /* Down-pointing triangle character */
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.tree-children {
+  margin-left: 20px;
+}
+.edit-button {
+  background-color: #ffffff; /* Green color for edit button */
+  color: rgb(57, 175, 3); /* White text color */
+  border: none;
+  padding: 4px 8px; /* Adjust padding for button size */
+  margin-right: 5px; /* Add margin between buttons */
+  border-radius: 5px;
+  border-color: antiquewhite;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size */
+}
+.delete-button {
+  background-color: rgb(250, 0, 0); /* Green color for edit button */
+  color: #ffffff; /* White text color */
+  border: none;
+  padding: 4px 8px; /* Adjust padding for button size */
+  margin-right: 5px; /* Add margin between buttons */
+  border-radius: 5px;
+  border-color: antiquewhite;
+  cursor: pointer;
+  font-size: 14px; /* Adjust font size */
+}
+
+
+/* Apply styling to the container of the file list */
+.file-list {
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the file list container */
+}
+
+.file-item {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  align-items: center;
+  border-bottom: 1px solid #ccc; /* Add a border between file items */
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.file-item > * {
+  padding: 5px; /* Adjust padding for each column */
+}
+
+/* Add the rest of your styling for buttons, hover effects, etc. */
+
+
+/* Style for the checkbox */
+.file-checkbox {
+  margin-right: 10px; /* Add margin to separate the checkbox from other content */
+}
+
+/* Style for file details (name, type, created date, path) */
+.file-details {
+  flex: 1; /* Allow the details to take up remaining space */
+  margin-right: 10px; /* Add margin to separate details from buttons */
+}
+
+/* Style for buttons (rename and delete) */
+.file-buttons {
+  display: flex;
+}
+
+.rename-button,
+.delete-button {
+  background-color: rgb(234, 36, 6); /* Adjust button background color */
+  color: #fff; /* Set button text color */
+  padding: 4px 8px; /* Adjust padding as needed */
+  margin-right: 5px; /* Add margin between buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Add hover effect to buttons */
+.rename-button:hover,
+.delete-button:hover {
+  background-color: #2779bd; /* Adjust hover background color */
+}
+
+
+.table-with-gap th,
+.table-with-gap td {
+  padding: 15px;
+  border-bottom: 2px solid #a4cbff; /* Border color for headings */
+  background-color: #c6c6c650;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.table-with-gap th:not(:last-child),
+.table-with-gap td:not(:last-child) {
+  margin-right: 30px; /* Set margin-right to 4 units (1rem * 4 = 4rem) */
+}
+
+
+.search-box {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
