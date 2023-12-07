@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
 const Table = () => {
-//   const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
-  // DO NOT TOUCH THIS
- /* useEffect(() => {
-    fetch('http://localhost:8000/data')  // Update with your FastAPI server endpoint
-      .then(response => response.json())
-      .then(data => {
-        console.log(data); // Check the structure of the fetched data
-        setData(data);
-      })
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);*/
+  // useEffect(() => {
+  //   fetch('http://localhost:8000/data')  // Update with your FastAPI server endpoint
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data); // Check the structure of the fetched data
+  //       setData(data);
+  //     })
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []);
+
+
   const data = [
     {"id": 1, "name": "File 1", "created_date": "2023-01-01", "path": "/files/file1"},
     {"id": 2, "name": "File 2", "created_date": "2023-01-02", "path": "/files/file2"},
     {"id": 3, "name": "File 3", "created_date": "2023-01-03", "path": "/files/file3"},
-]
+  ];
 
   return (
     <table className="table-auto w-full max-w-screen-lg mx-auto table-with-gap">
